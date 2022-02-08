@@ -1,0 +1,330 @@
+<html>
+    <head>
+        <div class="FirstButton">
+            <button onclick="showModal ()">
+                Sign Up
+            </button>
+         </div>
+    </head>
+   <script>
+       function hideModal() {
+        const modal = document.querySelector('#hide');
+        modal.classList.remove('show');
+    }
+
+    function showModal() {
+        const modal = document.querySelector('#hide');
+        modal.classList.add('show');
+    }
+    function button() {
+       var firstName = document.getElementById('First').value;
+       var surname = document.getElementById('Second').value;
+       var mobileNumber_Email = document.getElementById('Number').value;
+       var password = document.getElementById('Passw').value;
+       var month = document.getElementById('Month').value;
+       var day = document.getElementById('Day').value;
+       var year = document.getElementById('Year').value;
+       var female = document.getElementById('female').value;
+       var male = document.getElementById('male').value;
+       var custom = document.getElementById('custom').value;
+        if (firstName == "" || surname == "" || mobileNumber_Email == "" || password == "" || month == null || day == null || year == null || female == null || male == null || custom == null) {
+            alert(JSON.stringify("Rellena todos los campos"));
+        } else {
+            const data = {
+                name:
+                    firstName,
+
+                lastname:
+                    surname,
+
+                mobileOrEmail:
+                    mobileNumber_Email,
+
+                pass:
+                    password,
+
+                birthday: day + "/" + month + "/" + year,
+
+                gender: male
+            }
+            alert(JSON.stringify(data))
+        }
+    }
+   </script>
+<style>
+    .panel {
+        margin-top: 40px;
+        background-color: white;
+        border-radius: 7px;
+        width: 340px;
+        height: 510;
+        margin-right: 30px;
+        box-shadow: 0px 0px 2px 1px;
+        display: none;
+        flex-direction: column;
+    }
+    .show {
+        display: flex;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .TitleBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .p2 {
+        padding-left: 10px;
+        padding-top: 10px;
+        margin: 0%;
+        color: rgb(114, 112, 112);
+    }
+    .FirstButton{
+        width: 20px;
+        height: 20px;
+    }
+    .line {
+        background-color: #f0f0f0fa;
+        border-radius: 4px;
+        height: 35px;
+        margin-right: 1px;
+        margin-left: 8px;
+        border: 1px solid #ccd0d5;
+
+    }
+
+
+    .line2 {
+        background-color: #f0f0f0fa;
+        border-radius: 4px;
+        width: 320px;
+        height: 35px;
+        margin-bottom: 3px;
+        margin-top: 7px;
+        margin-left: 8px;
+        border: 1px solid #ccd0d5;
+    }
+
+    h1 {
+        padding-top: 1px;
+        padding-left: 10px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .date {
+        width: 100px;
+        height: 35px;
+        margin-left: 8px;
+        border: 1px solid #ccd0d5;
+        border-radius: 4px;
+    }
+
+    .p3 {
+        font-size: 13px;
+        margin-left: 8px;
+        margin-bottom: 2px;
+    }
+
+    .gender {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ccd0d5;
+        font-weight: normal;
+        color: black;
+        font-size: 15px;
+        height: 36px;
+        margin: 8px 6px 6px;
+        padding-left: 10px;
+        margin-right: 20px;
+        border-radius: 4px;
+        width: 125px;
+        margin-left: 0px;
+    }
+
+    hr {
+        border: 1px solid #ccd0d5;
+    }
+
+    .genderBox {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-left: 8px;
+    }
+
+    .text {
+        color: rgb(82, 82, 82);
+        font-size: 10px;
+        font-weight: 10;
+        margin: 0%;
+        padding-top: 10px;
+        border-radius: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+
+    }
+.text2{
+    font-size: 10px;
+}
+    .button {
+        background-color: #2eb42e;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-left: 90px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 150px;
+        height: 30px;
+        border: white;
+        color: white;
+    }
+
+    body {
+        align-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+
+<head>
+
+</head>
+
+<body>
+    <div class="panel" id="hide">
+        <div class="TitleBox">
+            <h1>Sing Up</h1>
+            <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/Q0G2UVjVQ4_.png" width="24" height="24"
+                onclick="hideModal()">
+        </div>
+        <p class="p2">
+            It's quick and easy.
+
+        </p>
+        <hr>
+        <div>
+            <input type="text" placeholder="First Name" id="First"class="line">
+            <input type="text" placeholder="Surname" id="Second"class="line">
+
+        </div>
+        <div>
+            <input type="text" placeholder="Mobile number or email adrees" id="Number"class="line2">
+
+        </div>
+        <div>
+            <input type="text" placeholder="New password" id="Passw" class="line2">
+
+        </div>
+
+        <div>
+            <p class="p3">
+                Date of birth
+            </p>
+            <div>
+                <select name="date" id="Day" class="date">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+
+                <select name="date" id="Month" class="date"> 
+                    <option value="january">january</option>
+                    <option value="february">february</option>
+                    <option value="march">march</option>
+                    <option value="april">april</option>
+                    <option value="may">may</option>
+                    <option value="june">june</option>
+                    <option value="july">july</option>
+                    <option value="august">august</option>
+                    <option value="september">september</option>
+                    <option value="october">october</option>
+                    <option value="november">november</option>
+                    <option value="december">december</option>
+                </select>
+
+                <select name="date" id="Year" class="date">
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                </select>
+
+
+            </div>
+            <div>
+                <p class="p3">
+                    Gender
+                </p>
+            </div>
+            <div class="genderBox">
+                <div class="gender">
+                    <label for="">Female </label>
+                    <input type="radio" id="female">
+                </div>
+                <div class="gender">
+                    <label for="">Male</label>
+                    <input type="radio" id="male">
+                </div>
+                <div class="gender">
+                    <label for="">Custom</label>
+                    <input type="radio" id="custom">
+                </div>
+            </div>
+            <p class="text2">
+            By clicking Sign Up, you agree to our <a
+                        href="https://www.facebook.com/legal/terms/update">Terms.</a>
+                    Learn how we collect,
+                    use and share your data in our <a href="https://www.facebook.com/about/privacy/update">Data
+                        policy</a>
+                    and how we use cookies and similar technology in our <a
+                        href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>
+                    You may receive SMS Notifications from us and can opt out any time.
+                </p>
+        </div>
+        <div>
+            <button class="button" onclick="button ()">Sign Up</button>
+        </div>
+
+    </div>
+
+    </div>
+
+</body>
